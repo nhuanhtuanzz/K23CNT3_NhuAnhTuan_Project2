@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FatFood_T2.Controllers
 {
-    [Authorize(Roles = "2")]
+    //[Authorize(Roles = "2")]
     public class AdminController : Controller
     {
         private readonly FoodOrderWebNhom2Context _context;
@@ -19,6 +19,20 @@ namespace FatFood_T2.Controllers
         {
             _context = context;
         }
+        public async Task<IActionResult> Dashboard()
+        {
+            ViewBag.AdminCount = await _context.Users.CountAsync(u => u.Role == (int)UserRole.Admin);
+            ViewBag.CustomerCount = await _context.Users.CountAsync(u => u.Role == (int)UserRole.Customer);
+            ViewBag.OwnerCount = await _context.Users.CountAsync(u => u.Role == (int)UserRole.Owner);
+            ViewBag.TotalCount = await _context.Users.CountAsync();
+
+            return View();
+        }
+
+
+
+
+
 
         // GET: Admin
         public async Task<IActionResult> Index()

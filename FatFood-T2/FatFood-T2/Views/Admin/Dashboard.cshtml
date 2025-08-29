@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-3 mb-3">
+        <div class="card bg-primary text-white p-3 rounded shadow">
+            <h5>Admins</h5>
+            <h3>@ViewBag.AdminCount</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card bg-success text-white p-3 rounded shadow">
+            <h5>Customers</h5>
+            <h3>@ViewBag.CustomerCount</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card bg-warning text-white p-3 rounded shadow">
+            <h5>Owners</h5>
+            <h3>@ViewBag.OwnerCount</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <div class="card bg-dark text-white p-3 rounded shadow">
+            <h5>Total</h5>
+            <h3>@ViewBag.TotalCount</h3>
+        </div>
+    </div>
+</div>

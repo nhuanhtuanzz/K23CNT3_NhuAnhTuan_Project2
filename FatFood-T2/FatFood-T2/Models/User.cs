@@ -27,3 +27,9 @@ public partial class User
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 }
+public enum UserRole
+{
+    Admin = 2,
+    Customer = 0,
+    Owner = 1
+}
